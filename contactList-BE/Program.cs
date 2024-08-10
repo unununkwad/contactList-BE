@@ -1,9 +1,7 @@
-using contactList_BE;
 using contactList_BE.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +21,7 @@ builder.Services.AddCors(options =>
 		});
 });
 
+//JWT autentication
 builder.Services.AddAuthentication(options =>
 {
 	options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
